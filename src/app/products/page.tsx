@@ -39,7 +39,13 @@ let product: Iproducts[] = [
   },
 ];
 
-let star=[<IoMdStar />,<IoMdStar />,<IoMdStar />,<IoMdStar />,<IoMdStar />]
+let star = [
+  <IoMdStar key={1} />,
+  <IoMdStar key={2} />,
+  <IoMdStar key={3} />,
+  <IoMdStar key={4} />,
+  <IoMdStar key={5} />,
+];
 export default function Products() {
   return (
     <div className="w-full h-full sm:h-[500px] mt-10 max-w-screen-2xl mx-auto">
