@@ -49,29 +49,36 @@ let star = [
 export default function Products() {
   return (
     <div className="w-full h-full sm:h-[500px] mt-10 max-w-screen-2xl mx-auto">
-   
-    <h1 className="text-3xl md:text-4xl font-bold text-center">NEW ARRIVALS</h1>
-    <div className="flex flex-col md:flex-row justify-center items-center md:justify-between px-8 mt-10">
-      {
-       product.map((data) => {
-        return(
-          <div>
-           <Link href={`/products/${data.id}`}>
-            <div className="w-[190px] h-[190px] md:w-[260px] md:h-[298px] bg-[#F0EEED] rounded-[20px];">
-            <Image src={data.img_url} alt={data.title} className="w-full h-full rounded-[40px]" width={100} height={100}></Image>
+      <h1 className="text-3xl md:text-4xl font-bold text-center">NEW ARRIVALS</h1>
+      <div className="flex flex-col md:flex-row justify-center items-center md:justify-between px-8 mt-10">
+        {product.map((data) => {
+          return (
+            <div key={data.id}>  {/* Add key prop here */}
+              <Link href={`/products/${data.id}`}>
+                <div className="w-[190px] h-[190px] md:w-[260px] md:h-[298px] bg-[#F0EEED] rounded-[20px];">
+                  <Image
+                    src={data.img_url}
+                    alt={data.title}
+                    className="w-full h-full rounded-[40px]"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              </Link>
+              <div>
+                <p className="text-sm mt-2 font-bold">{data.title}</p>
+                <p className="flex text-yellow-400">{star}</p>
+                <p className="font-bold mt-1">
+                  {data.price}{" "}
+                  <span className="font-bold text-gray-400 line-through ml-2">
+                    {data.old_price}
+                  </span>
+                </p>
+              </div>
             </div>
-           </Link>
-            <div>
-                        <p className="text-sm mt-2 font-bold">{data.title}</p>
-                        <p className="flex text-yellow-400">{star}</p>
-                        <p className="font-bold mt-1">{data.price} <span className="font-bold text-gray-400 line-through ml-2">{data.old_price}</span></p>
-            </div>
-          </div>
-        )
-      })
-    }
-   
-  </div>
-  </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
