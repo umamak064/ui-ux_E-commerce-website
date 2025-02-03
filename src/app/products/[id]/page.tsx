@@ -9,7 +9,13 @@ import { Check } from "lucide-react";
 import CustomerTestimonials from "@/components/allreview";
 import T_shirts from "@/components/products";
 import { BreadcrumbCollapsed } from "@/components/breadcrump";
-let star=[<IoMdStar />,<IoMdStar />,<IoMdStar />,<IoMdStar />,<IoMdStar />]
+let star = [
+  <IoMdStar key={1} />,
+  <IoMdStar key={2} />,
+  <IoMdStar key={3} />,
+  <IoMdStar key={4} />,
+  <IoMdStar key={5} />,
+];
 
 interface Iproducts {
   title: string;
